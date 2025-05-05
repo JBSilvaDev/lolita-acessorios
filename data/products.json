@@ -33,5 +33,12 @@
         "description": "Chaveiro artesanal em feltro com inicial bordada. Escolha a cor do feltro e a letra para personalizar. Ótimo presente!",
         "link": "https://shopee.com.br/chaveiro-feltro",
         "badge": null
+    },
+    "6.jpg": {
+        "title": "Brincos de Cerâmica Pintada",
+        "price": "R$ 49,90",
+        "description": "Brincos leves em cerâmica artesanal, pintados à mão com motivos florais. Hipoalergênicos. Disponível em várias cores e designs.",
+        "link": "https://shopee.com.br/brincos-ceramica",
+        "badge": "Mais Vendido"
     }
 }
