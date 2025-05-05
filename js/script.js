@@ -8,7 +8,7 @@ const storeConfig = {
         whatsapp: "#",
         pinterest: "#"
     },
-    imagesPath: "images/" // Caminho para a pasta de imagens
+    imagesPath: "images/produtos/" // Caminho para a pasta de imagens
 };
 
 // Função para carregar e renderizar os produtos
