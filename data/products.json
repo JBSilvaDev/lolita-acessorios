@@ -1,0 +1,37 @@
+{
+    "1.jpg": {
+        "title": "Pulseira de Macramé com Pérolas",
+        "price": "R$ 59,90",
+        "description": "Pulseira artesanal feita com fios de algodão e pérolas naturais. Pode ser personalizada com cores de sua preferência. Ajustável para todos os tamanhos.",
+        "link": "https://shopee.com.br/pulseira-macrame",
+        "badge": "Sob Encomenda"
+    },
+    "2.png": {
+        "title": "Brincos de Cerâmica Pintada",
+        "price": "R$ 49,90",
+        "description": "Brincos leves em cerâmica artesanal, pintados à mão com motivos florais. Hipoalergênicos. Disponível em várias cores e designs.",
+        "link": "https://shopee.com.br/brincos-ceramica",
+        "badge": "Mais Vendido"
+    },
+    "3.png": {
+        "title": "Colar de Resina com Flores",
+        "price": "R$ 79,90",
+        "description": "Colar artesanal em resina com flores preservadas. Cada peça é única. Pode ser feito com flores de sua escolha (consulte disponibilidade).",
+        "link": "https://shopee.com.br/colar-resina-flores",
+        "badge": "Sob Encomenda"
+    },
+    "4.png": {
+        "title": "Chaveiro de Feltro Personalizado",
+        "price": "R$ 29,90",
+        "description": "Chaveiro artesanal em feltro com inicial bordada. Escolha a cor do feltro e a letra para personalizar. Ótimo presente!",
+        "link": "https://shopee.com.br/chaveiro-feltro",
+        "badge": null
+    },
+    "5.png": {
+        "title": "Chaveiro de Feltro Personalizado",
+        "price": "R$ 29,90",
+        "description": "Chaveiro artesanal em feltro com inicial bordada. Escolha a cor do feltro e a letra para personalizar. Ótimo presente!",
+        "link": "https://shopee.com.br/chaveiro-feltro",
+        "badge": null
+    }
+}

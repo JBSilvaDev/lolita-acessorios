@@ -1,0 +1,245 @@
+:root {
+    --cor-primaria: #d4a5c3;
+    --cor-secundaria: #f0d9e7;
+    --cor-texto: #4a3e47;
+    --cor-clara: #fdf7fa;
+    --cor-destaque: #b57ba6;
+    --cor-botao: #8e6a8a;
+}
+
+body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-clara);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-text {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.handmade-icon {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--cor-destaque);
+}
+
+.product-price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cor-botao);
+    margin-bottom: 15px;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.custom-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.shopee-btn {
+    display: inline-block;
+    background-color: var(--cor-botao);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+
+.shopee-btn:hover {
+    background-color: var(--cor-destaque);
+    transform: scale(1.05);
+}
+
+.shopee-btn i {
+    margin-right: 8px;
+}
+
+footer {
+    background-color: var(--cor-texto);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--cor-secundaria);
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.1rem;
+}
+
+.footer-links a:hover {
+    color: var(--cor-secundaria);
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-secundaria);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .logo {
+        font-size: 2.2rem;
+    }
+    
+    .slogan {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}
