@@ -40,5 +40,12 @@
         "description": "Brincos leves em cerâmica artesanal, pintados à mão com motivos florais. Hipoalergênicos. Disponível em várias cores e designs.",
         "link": "https://shopee.com.br/brincos-ceramica",
         "badge": "Mais Vendido"
+    },
+    "perfilnovo.png": {
+        "title": "JB Silva",
+        "price": "R$ inestimavee",
+        "description": "O Gostosao",
+        "link": "https://google.com",
+        "badge": "Nunca vendido"
     }
 }
