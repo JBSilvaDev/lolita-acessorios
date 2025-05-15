@@ -44,7 +44,18 @@
         "price": "R$ 49,90",
         "description": "Brincos leves em cerâmica artesanal, pintados à mão com motivos florais. Hipoalergênicos. Disponível em várias cores e designs.",
         "link": "https://shopee.com.br/brincos-ceramica",
+<<<<<<< HEAD
         "badge": "Mais Vendido",
         "galeria": ["6.jpg", "1.jpg","1.jpg", "2.jpg", "3.jpg","2.jpg", "3.jpg"]
+=======
+        "badge": "Mais Vendido"
+    },
+        "Suzano.png": {
+        "title": "Suzano SA",
+        "price": "R$ 4009,90",
+        "description": "Empresa",
+        "link": "https://shopee.com.br/brincos-ceramica",
+        "badge": "Celulose"
+>>>>>>> 3fdd877efe80b9ce481dbf453750bcb7191b912b
     }
 }
