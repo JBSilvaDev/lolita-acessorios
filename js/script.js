@@ -13,7 +13,7 @@ const storeConfig = {
 
 // Elementos do Modal (Popup)
 const modal = document.getElementById('productModal');
-const modalImage = document.getElementById('modal-image'); // Imagem principal no modal (agora existe novamente)
+const modalImage = document.getElementById('modal-image'); // Imagem principal no modal
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
 const modalPrice = document.getElementById('modal-price');
@@ -25,6 +25,7 @@ const modalGallery = document.getElementById('modal-gallery');
 
 // Função para carregar e renderizar os produtos
 async function loadAndRenderProducts() {
+    
     try {
         // Caminho do arquivo JSON agora inclui a pasta 'data'
         const response = await fetch('data/products.json');
@@ -120,6 +121,7 @@ async function loadAndRenderProducts() {
 
 // Função para atualizar informações da loja no rodapé
 function updateStoreInfo() {
+    
     // Ano atual
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -160,6 +162,9 @@ window.addEventListener('click', function(event) {
 
 // Inicialização: Carrega produtos e atualiza informações da loja quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
+    // Adicionado: Garante que o modal esteja oculto ao carregar a página
+    modal.style.display = 'none';
+
     loadAndRenderProducts();
     updateStoreInfo();
 });
