@@ -20,7 +20,7 @@ header {
     background: linear-gradient(135deg, var(--cor-primaria), var(--cor-destaque));
     color: white;
     text-align: center;
-    padding: 3rem 0;
+    padding: 10px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
@@ -283,7 +283,7 @@ footer {
     margin: auto;
     padding: 20px; /* Reduzido padding */
     border-radius: 12px; /* Ajustado border-radius */
-    max-width: 60%; /* Garante que não seja maior que 90% da tela */
+    max-width: 60%; /* Garante que não seja maior que 60% da tela */
     max-height: 90vh; /* Altura máxima do conteúdo para 90% da viewport height */
     overflow-y: auto; /* Permite scroll vertical APENAS no conteúdo do modal se necessário */
     position: relative;
@@ -337,10 +337,6 @@ footer {
     margin-left: auto;
     margin-right: auto;
     white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
-    /* Removido: Regras para ocultar a barra de rolagem */
-    /* -ms-overflow-style: none;  /* IE and Edge */
-    /* scrollbar-width: none;  /* Firefox */
-    /* ::-webkit-scrollbar { display: none; } */
 }
 
 /* Removido: Regras para ocultar a barra de rolagem */
@@ -453,6 +449,9 @@ footer {
     align-items: center; /* Centraliza itens horizontalmente */
     width: 80%; /* Permite que a largura se ajuste ao conteúdo, mas respeite o max-width */
 }
+header {
+        padding: 15px 0;
+    }
 
     .header-content {
         flex-direction: column;
@@ -524,6 +523,12 @@ footer {
 
 /* Media Query para telas de tablet e mobile */
 @media (max-width: 768px) {
+    .instagram-container {
+        display: none;
+    }
+    header {
+        padding: 0.5rem 0;
+    }
 
     /* Ajusta a largura da imagem principal em telas menores */
     .modal-content img#modal-image {
@@ -540,16 +545,12 @@ footer {
         justify-content: flex-start; /* Alinha ao início para o scroll */
         padding: 10px 5px; /* Ajusta padding para scroll horizontal */
         white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
-        /* Removido: Regras para ocultar a barra de rolagem */
-        /* -ms-overflow-style: none;  /* IE and Edge */
-        /* scrollbar-width: none;  /* Firefox */
-        /* ::-webkit-scrollbar { display: none; } */
     }
 
     .modal-extra-images img {
         /* Ajusta a largura para exibir aproximadamente 3 imagens em telas menores */
         width: auto; /*calc((100% / 3) - 10px); /* Mantido para 3 imagens por linha */
-        min-width: auto;/*calc((100% / 3) - 10px);
+        min-width: auto; /*calc((100% / 3) - 10px);*/
         height: 50px; /* Ajustado: Altura das miniaturas para 50px */
         flex-shrink: 0; /* Garante que as imagens não encolham */
     }
@@ -580,10 +581,51 @@ footer {
     }
 }
 
-/* Media Query para ocultar elementos do cabeçalho em mobile */
+
 @media (max-width: 576px) {
+    .modal-content {
+    padding: 20px;
+    max-width: 95%; /* Aumenta a largura máxima em telas menores */
+    max-height: 70vh; /* Altura máxima do conteúdo para 90% da viewport height */
+
+}
+    .modal-content img#modal-image {
+        max-width: 50%; /* Permite que a imagem principal ocupe a largura total */
+        width: auto; /* Permite que a largura se ajuste */
+    }
+    .modal-extra-images {
+        flex-direction: row; /* Garante layout horizontal */
+        overflow-x: auto; /* Adiciona scroll horizontal */
+        overflow-y: hidden; /* Remove scroll vertical */
+        width: 260px; /* Ocupa a largura total */
+        max-height: 70px; /* Ajusta a altura máxima em telas menores */
+        padding: 10px 5px; /* Ajusta padding para scroll horizontal */
+        display: flex; /* Usa flexbox para exibir as miniaturas */
+        -webkit-overflow-scrolling: touch; /* Melhora o scroll em dispositivos touch */
+        gap: 10px; /* Espaço entre as miniaturas */
+        margin-top: 0; /* Remove margin-top desnecessário */
+        margin-bottom: 20px; /* Espaço abaixo da galeria */
+        background-color: var(--cor-secundaria);
+        border-radius: 8px;
+        max-width: 100%; /* Garante que a galeria não estoure o modal em telas menores */
+        flex-shrink: 0; /* Impede que a galeria encolha */
+        box-sizing: border-box; /* Inclui padding na largura */
+        justify-content: flex-start; /* Alinha ao início para o scroll */
+        align-items: center; /* Centraliza as miniaturas verticalmente */
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
+    }
+
+    .modal-extra-images img {
+        /* Ajusta a largura para exibir aproximadamente 3 imagens em telas menores */
+        width: auto; 
+        min-width: auto;
+        height: 50px; /* Ajustado: Altura das miniaturas para 50px */
+        flex-shrink: 0; /* Garante que as imagens não encolham */
+    }
     header {
-        padding: 2rem 0;
+        padding: 10px 0;
     }
 
     .image-container {
