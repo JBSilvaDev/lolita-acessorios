@@ -339,17 +339,6 @@ footer {
     white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
 }
 
-/* Removido: Regras para ocultar a barra de rolagem */
-/* .modal-extra-images::-webkit-scrollbar {
-    display: none;
-} */
-
-/* Removido: Regras para ocultar a barra de rolagem */
-/* .modal-extra-images {
-  -ms-overflow-style: none;  /* IE and Edge */
-  /* scrollbar-width: none;  /* Firefox */
-/* } */
-
 
 .modal-extra-images img {
     width: 50px; /* Largura das miniaturas para 50px */
@@ -532,9 +521,21 @@ header {
     }
 }
 
+@media (max-width: 800px) {
+    .instagram-container {
+        display: none;
+    }
+    header {
+        padding: 0.5rem 0;
+    }
+}
+
 /* Media Query para telas de tablet e mobile */
 @media (max-width: 768px) {
     .instagram-container {
+        display: none;
+    }
+    .header-title {
         display: none;
     }
     header {
