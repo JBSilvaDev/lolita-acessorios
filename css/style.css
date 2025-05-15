@@ -548,8 +548,8 @@ footer {
 
     .modal-extra-images img {
         /* Ajusta a largura para exibir aproximadamente 3 imagens em telas menores */
-        width: calc((100% / 3) - 10px); /* Mantido para 3 imagens por linha */
-        min-width: calc((100% / 3) - 10px);
+        width: auto; /*calc((100% / 3) - 10px); /* Mantido para 3 imagens por linha */
+        min-width: auto;/*calc((100% / 3) - 10px);
         height: 50px; /* Ajustado: Altura das miniaturas para 50px */
         flex-shrink: 0; /* Garante que as imagens não encolham */
     }
