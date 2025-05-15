@@ -48,7 +48,7 @@ async function loadAndRenderProducts() {
                         <div class="product-price">${product.price}</div>
                         <p class="product-description">${product.description}</p>
                         <a href="${product.link}" class="shopee-btn" target="_blank">
-                            <i class="fas fa-shopping-cart"></i> ${product.badge === 'Sob Encomenda' ? 'Encomendar' : 'Comprar'} na Shopee
+                            <i class="fas fa-shopping-cart"></i> Comprar na Shopee
                         </a>
                     </div>
                 </div>
