@@ -428,6 +428,17 @@ footer {
     color: var(--cor-destaque);
     text-decoration: none;
 }
+.product-description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #666;
+    /* Adicionado: Limita o texto a duas linhas e adiciona reticências */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limita a 2 linhas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona reticências */
+}
 
 
 /* Media Queries para Responsividade Aprimorada */
