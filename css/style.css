@@ -24,9 +24,7 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
-    
 }
-
 
 header::before {
     content: "";
@@ -35,20 +33,11 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
+    /* Substitua esta URL pela URL de uma imagem de fundo que você possui ou que é de uso livre */
     background: url('https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
     opacity: 0.2;
     z-index: 0;
 }
-.title {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1; /* Remove espaçamento extra do texto */
-    margin: 0 10px; /* Espaço entre título e imagens */
-}
-
-/* Adicione isso ao seu arquivo style.css */
 
 .header-content {
     position: relative;
@@ -75,6 +64,7 @@ header::before {
     height: auto;
     vertical-align: bottom; /* Remove espaço abaixo da imagem */
     object-fit: contain;
+    border-radius: 8px; /* Adiciona bordas arredondadas às imagens do cabeçalho */
 }
 
 .logo {
@@ -100,8 +90,6 @@ header::before {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 1rem;
 }
-
-/* Mantenha o restante do seu CSS existente */
 
 .container {
     max-width: 1200px;
@@ -139,6 +127,7 @@ header::before {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    cursor: pointer; /* Indica que o card é clicável */
 }
 
 .product-card:hover {
@@ -151,6 +140,7 @@ header::before {
     height: 280px;
     object-fit: cover;
     border-bottom: 1px solid var(--cor-secundaria);
+    display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 .product-info {
@@ -187,6 +177,7 @@ header::before {
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 600;
+    z-index: 1; /* Garante que o badge fique acima da imagem */
 }
 
 .shopee-btn {
@@ -269,22 +260,396 @@ footer {
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+/* Estilos para o Modal (Popup) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Posição fixa na tela */
+    z-index: 1000; /* Fica no topo de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: hidden; /* Impede a barra de rolagem principal do modal */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex; /* Usa flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adiciona padding para evitar que o conteúdo toque as bordas em telas pequenas */
+    box-sizing: border-box; /* Inclui padding na largura e altura */
+}
+
+.modal-content {
+    background-color: var(--cor-clara);
+    margin: auto;
+    padding: 20px; /* Reduzido padding */
+    border-radius: 12px; /* Ajustado border-radius */
+    max-width: 50%; /* Garante que não seja maior que 90% da tela */
+    max-height: 90vh; /* Altura máxima do conteúdo para 90% da viewport height */
+    overflow-y: auto; /* Permite scroll vertical APENAS no conteúdo do modal se necessário */
+    position: relative;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: var(--cor-texto);
+    display: flex; /* Usa flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* Organiza os itens em coluna (imagem, galeria, título, descrição, etc.) */
+    align-items: center; /* Centraliza itens horizontalmente */
+    width: auto; /* Permite que a largura se ajuste ao conteúdo, mas respeite o max-width */
+}
+
+/* Estilos para a imagem principal no modal */
+.modal-content img#modal-image {
+    /* Define a largura da imagem principal igual à largura da galeria */
+    width: 400px; /* Deve ser o mesmo valor da largura da galeria abaixo */
+    max-width: 100%; /* Garante responsividade */
+    height: auto; /* Altura automática */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    display: block;
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+    /* Centraliza a imagem principal */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilos para a galeria de imagens adicionais no modal */
+.modal-extra-images {
+    display: flex; /* Usa flexbox para exibir as miniaturas */
+    flex-direction: row; /* Garante layout horizontal */
+    overflow-x: auto; /* Adiciona scroll horizontal */
+    overflow-y: hidden; /* Impede scroll vertical na galeria */
+    -webkit-overflow-scrolling: touch; /* Melhora o scroll em dispositivos touch */
+    gap: 10px; /* Espaço entre as miniaturas */
+    margin-top: 0; /* Remove margin-top desnecessário */
+    margin-bottom: 20px; /* Espaço abaixo da galeria */
+    padding: 10px; /* Ajustado padding */
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+    /* Define uma largura fixa para a galeria */
+    width: 400px; /* Ajuste este valor para o tamanho desejado */
+    max-width: 100%; /* Garante que a galeria não estoure o modal em telas menores */
+    flex-shrink: 0; /* Impede que a galeria encolha */
+    box-sizing: border-box; /* Inclui padding na largura */
+    justify-content: flex-start; /* Alinha ao início para o scroll */
+    max-height: 70px; /* Reduz a altura máxima do contêiner da galeria para 50px imagem + padding */
+    align-items: center; /* Centraliza as miniaturas verticalmente */
+    /* Adicionado: Centraliza a galeria horizontalmente no modal-content */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Oculta a barra de rolagem para Webkit (Chrome, Safari) */
+.modal-extra-images::-webkit-scrollbar {
+    display: none;
+}
+
+/* Oculta a barra de rolagem para IE, Edge e Firefox */
+.modal-extra-images {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.modal-extra-images img {
+    width: 50px; /* Largura das miniaturas para 50px */
+    min-width: 50px; /* Largura mínima das miniaturas para 50px */
+    height: 50px; /* Altura das miniaturas para 50px */
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer; /* Indica que as miniaturas são clicáveis */
+    transition: transform 0.2s ease;
+}
+
+.modal-extra-images img:hover {
+    transform: scale(1.05);
+}
+
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+    width: 100%; /* Garante que o título ocupe a largura total */
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    width: 100%; /* Garante que a descrição ocupe a largura total */
+}
+
+.modal-content #modal-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cor-botao);
+    margin-bottom: 20px;
+    width: 100%; /* Garante que o preço ocupe a largura total */
+}
+
+.shopee-btn {
+    background-color: var(--cor-botao);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    display: inline-block; /* ou block com margin auto */
+}
+
+
+.shopee-btn:hover {
+    background-color: var(--cor-destaque);
+    transform: scale(1.05);
+}
+
+.shopee-btn i {
+    margin-right: 8px;
+}
+
+.close-button {
+    color: var(--cor-texto);
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 1px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--cor-destaque);
+    text-decoration: none;
+}
+
+
+/* Media Queries para Responsividade Aprimorada */
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
     }
-    
+
+    .image-container {
+        margin-bottom: 1rem;
+    }
+
     .logo {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
-    
+
     .slogan {
-        font-size: 1.1rem;
-        padding: 0 20px;
+        font-size: 1rem;
     }
-    
+
+    .intro-text {
+        padding: 1.5rem 15px;
+        font-size: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 30px 0;
+    }
+
+    .product-card {
+        border-radius: 8px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+    }
+
+    .shopee-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Media Query para telas de tablet e mobile */
+@media (max-width: 768px) {
+    /* Ajusta a largura da imagem principal em telas menores */
+    .modal-content img#modal-image {
+        max-width: 100%; /* Permite que a imagem principal ocupe a largura total */
+        width: auto; /* Permite que a largura se ajuste */
+    }
+
+    .modal-extra-images {
+        flex-direction: row; /* Garante layout horizontal */
+        overflow-x: auto; /* Adiciona scroll horizontal */
+        overflow-y: hidden; /* Remove scroll vertical */
+        width: 100%; /* Ocupa a largura total */
+        max-height: 70px; /* Ajusta a altura máxima em telas menores */
+        justify-content: flex-start; /* Alinha ao início para o scroll */
+        padding: 10px 5px; /* Ajusta padding para scroll horizontal */
+    }
+
+    .modal-extra-images img {
+        /* Ajusta a largura para exibir aproximadamente 3 imagens em telas menores */
+        width: calc((100% / 3) - 10px); /* Mantido para 3 imagens por linha */
+        min-width: calc((100% / 3) - 10px);
+        height: 50px; /* Ajustado: Altura das miniaturas para 50px */
+        flex-shrink: 0; /* Garante que as imagens não encolham */
+    }
+
+
+    .modal-content {
+        padding: 20px;
+        max-width: 95%; /* Aumenta a largura máxima em telas menores */
+        max-height: 90vh; /* Mantém a altura máxima */
+    }
+
+    .modal-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+
+    .modal-content #modal-price {
+        font-size: 1.1rem;
+    }
+
+    .close-button {
+        font-size: 2rem;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+/* Media Query para ocultar elementos do cabeçalho em mobile */
+@media (max-width: 576px) {
+    header {
+        padding: 2rem 0;
+    }
+
+    .image-container {
+        width: 80px;
+    }
+
+    .image-container img {
+        max-height: 60px;
+    }
+
+    /* Oculta o título do cabeçalho */
+    .header-title {
+        display: none;
+    }
+
+    /* Oculta o contêiner do ícone do Instagram */
+    .instagram-container {
+        display: none;
+    }
+
+    .slogan {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .intro-text {
+        padding: 1rem 10px;
+        font-size: 0.9rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info {
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .product-price {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .product-description {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+
+    .custom-badge {
+        top: 10px;
+        right: 10px;
+        padding: 3px 8px;
+        font-size: 0.7rem;
+    }
+
+    .shopee-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    footer {
+        padding: 30px 0;
+        margin-top: 40px;
+    }
+
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
     .footer-links a {
         display: block;
-        margin: 10px 0;
+        margin: 8px 0;
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+        margin: 0 8px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
     }
 }

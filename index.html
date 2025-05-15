@@ -14,30 +14,28 @@
             <div class="image-container">
                 <img src="images/logo.png" alt="Imagem Esquerda">
             </div>
-            <div class="logo">Lolita Acessórios</div>
-            <div class="image-container">
-                <a href="https://www.google.com"target="_blank" rel="noopener noreferrer">
-                    <img src="images/instagram.png" alt="Imagem Direita">
+            <div class="logo header-title">Lolita Acessórios</div>
+            <div class="image-container instagram-container">
+                <a href="https://www.instagram.com/seu-perfil" target="_blank" rel="noopener noreferrer">
+                    <img src="images/instagram.png" alt="Ícone do Instagram">
                 </a>
-            
             </div>
             <div class="slogan">Acessórios artesanais feitos com amor e cuidado para realçar sua beleza única</div>
         </div>
     </header>
-    
+
     <main class="container">
         <div class="intro-text">
             <p>Cada peça em nossa coleção é <i class="fas fa-hand-holding-heart handmade-icon"></i> <strong>feita à mão</strong> com materiais selecionados e pode ser <strong>personalizada</strong> conforme seu gosto. Trabalhamos com <strong>pulseiras</strong>, <strong>colares</strong>, <strong>brincos</strong> e <strong>chaveiros</strong> artesanais, cada um com seu charme especial.</p>
         </div>
-        
+
         <section class="gallery" id="products-gallery">
-            <!-- Os produtos serão carregados dinamicamente via JavaScript -->
             <div class="loading">
                 <i class="fas fa-spinner fa-spin"></i> Carregando produtos...
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -59,6 +57,23 @@
             </div>
         </div>
     </footer>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-image-gallery-wrapper">
+                <img id="modal-image" src="" alt="Imagem do Produto">
+                <div id="modal-gallery" class="modal-extra-images">
+                    </div>
+            </div>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+            <a id="modal-shopee-link" href="#" class="shopee-btn" target="_blank">
+                <i class="fas fa-shopping-cart"></i> Comprar na Shopee
+            </a>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
