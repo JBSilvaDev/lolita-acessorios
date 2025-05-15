@@ -283,7 +283,7 @@ footer {
     margin: auto;
     padding: 20px; /* Reduzido padding */
     border-radius: 12px; /* Ajustado border-radius */
-    max-width: 50%; /* Garante que não seja maior que 90% da tela */
+    max-width: 60%; /* Garante que não seja maior que 90% da tela */
     max-height: 90vh; /* Altura máxima do conteúdo para 90% da viewport height */
     overflow-y: auto; /* Permite scroll vertical APENAS no conteúdo do modal se necessário */
     position: relative;
@@ -336,18 +336,23 @@ footer {
     /* Adicionado: Centraliza a galeria horizontalmente no modal-content */
     margin-left: auto;
     margin-right: auto;
+    white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
+    /* Removido: Regras para ocultar a barra de rolagem */
+    /* -ms-overflow-style: none;  /* IE and Edge */
+    /* scrollbar-width: none;  /* Firefox */
+    /* ::-webkit-scrollbar { display: none; } */
 }
 
-/* Oculta a barra de rolagem para Webkit (Chrome, Safari) */
-.modal-extra-images::-webkit-scrollbar {
+/* Removido: Regras para ocultar a barra de rolagem */
+/* .modal-extra-images::-webkit-scrollbar {
     display: none;
-}
+} */
 
-/* Oculta a barra de rolagem para IE, Edge e Firefox */
-.modal-extra-images {
+/* Removido: Regras para ocultar a barra de rolagem */
+/* .modal-extra-images {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+  /* scrollbar-width: none;  /* Firefox */
+/* } */
 
 
 .modal-extra-images img {
@@ -515,6 +520,11 @@ footer {
         max-height: 70px; /* Ajusta a altura máxima em telas menores */
         justify-content: flex-start; /* Alinha ao início para o scroll */
         padding: 10px 5px; /* Ajusta padding para scroll horizontal */
+        white-space: nowrap; /* Adicionado: Impede a quebra de linha para forçar o scroll */
+        /* Removido: Regras para ocultar a barra de rolagem */
+        /* -ms-overflow-style: none;  /* IE and Edge */
+        /* scrollbar-width: none;  /* Firefox */
+        /* ::-webkit-scrollbar { display: none; } */
     }
 
     .modal-extra-images img {
