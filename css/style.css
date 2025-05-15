@@ -436,6 +436,24 @@ footer {
 
 /* Media Queries para Responsividade Aprimorada */
 @media (max-width: 992px) {
+    .modal-content {
+    background-color: var(--cor-clara);
+    margin: auto;
+    padding: 20px; /* Reduzido padding */
+    border-radius: 12px; /* Ajustado border-radius */
+    max-width: 60%; /* Garante que não seja maior que 90% da tela */
+    max-height: 90vh; /* Altura máxima do conteúdo para 90% da viewport height */
+    overflow-y: auto; /* Permite scroll vertical APENAS no conteúdo do modal se necessário */
+    position: relative;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: var(--cor-texto);
+    display: flex; /* Usa flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* Organiza os itens em coluna (imagem, galeria, título, descrição, etc.) */
+    align-items: center; /* Centraliza itens horizontalmente */
+    width: 80%; /* Permite que a largura se ajuste ao conteúdo, mas respeite o max-width */
+}
+
     .header-content {
         flex-direction: column;
         align-items: center;
@@ -506,6 +524,7 @@ footer {
 
 /* Media Query para telas de tablet e mobile */
 @media (max-width: 768px) {
+
     /* Ajusta a largura da imagem principal em telas menores */
     .modal-content img#modal-image {
         max-width: 100%; /* Permite que a imagem principal ocupe a largura total */
